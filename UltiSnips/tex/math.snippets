@@ -83,7 +83,16 @@ snippet abs "degrees" iA
 endsnippet
 
 context "math()"
-snippet int "integral" wA
+snippet int "integral" w
 \int_{${1:a}}^{${2:b}} $0
 endsnippet
 
+context "math()"
+snippet \umb "integral" wA
+\underbrace{${1:a}}_{${2:b}} 
+endsnippet
+
+context "math()"
+snippet fx "integral" wA
+(x)
+endsnippet
