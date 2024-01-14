@@ -30,31 +30,35 @@ snippet == "equals" iA
 &= $1 \\\\
 endsnippet
 
-snippet lr() "left( right)" i            
+snippet lr() "left( right)" iA 
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
 
-snippet lr| "left| right|" i
+snippet lr| "left| right|" iA
 \left| ${1:${VISUAL}} \right| $0
 endsnippet
 
-snippet lr[] "left[ right]" i
+snippet lr[] "left[ right]" iA
 \left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
+context "math()"
 snippet sum "sum" w
 \sum_{i=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
 
-snippet lim "limit" w
+context "math()"
+snippet lim "limit" wA
 \lim_{${1:n} \to ${2:\infty}} 
 endsnippet
 
-snippet part "d/dx" w
+context "math()"
+snippet part "d/dx" wA
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
-snippet diff "d/dx" w
+context "math()"
+snippet diff "d/dx" wA
 \frac{d ${1:V}}{d ${2:x}} $0
 endsnippet
 
@@ -64,7 +68,7 @@ snippet sq "\sqrt{}" iA
 endsnippet
 
 context "math()"
-snippet ee "d/dx" i
+snippet ee "d/dx" iA
 \cdot 10^{$1}$2
 endsnippet
 
@@ -74,12 +78,21 @@ snippet ite "Itemize" bA
 endsnippet
 
 context "math()"
-snippet abs "degrees" i
+snippet abs "degrees" iA
 |$1|$0
 endsnippet
 
 context "math()"
-snippet int "integral" wA
+snippet int "integral" w
 \int_{${1:a}}^{${2:b}} $0
 endsnippet
 
+context "math()"
+snippet \umb "integral" wA
+\underbrace{${1:a}}_{${2:b}} 
+endsnippet
+
+context "math()"
+snippet fx "integral" wA
+(x)
+endsnippet
