@@ -43,12 +43,12 @@ snippet lr[] "left[ right]" iA
 endsnippet
 
 context "math()"
-snippet sum "sum" w
+snippet "(\s|[^\\])sum" "sum" rwA
 \sum_{i=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
 
 context "math()"
-snippet lim "limit" wA
+snippet "(\s|[^\\])lim" "limit" rwA
 \lim_{${1:n} \to ${2:\infty}} 
 endsnippet
 
@@ -83,16 +83,31 @@ snippet abs "degrees" iA
 endsnippet
 
 context "math()"
-snippet int "integral" w
-\int_{${1:a}}^{${2:b}} $0
+snippet "(\s|[^\\])int" "integral" rwA
+`!p snip.rv=match.group(1)`\int_{${1:a}}^{${2:b}} $0
 endsnippet
 
 context "math()"
-snippet \umb "integral" wA
+snippet umb "integral" wA
 \underbrace{${1:a}}_{${2:b}} 
 endsnippet
 
 context "math()"
 snippet fx "integral" wA
 (x)
+endsnippet
+
+context "math()"
+snippet "(\s|[^\\])cos" "cos" rwA
+`!p snip.rv=match.group(1)`\cos{}
+endsnippet
+
+context "math()"
+snippet "(\s|[^\\])sin" "sin" rwA
+`!p snip.rv=match.group(1)`\sin{}
+endsnippet
+
+context "math()"
+snippet "(\s|[^\\])tan" "tan" rwA
+`!p snip.rv=match.group(1)`\tan{}
 endsnippet

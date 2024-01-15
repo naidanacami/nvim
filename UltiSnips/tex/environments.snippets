@@ -25,9 +25,9 @@ snippet table "Table environment" b
 endsnippet
 
 snippet fig "Figure environment" b
-\begin{figure}[${2:H}]
+\begin{figure}[${1:H}]
 	\centering
-	\includegraphics[width=0.8\textwidth]{$1}
+	\includegraphics[width=0.8\textwidth]{$2}
 	\caption{}
 	\label{}
 \end{figure}
@@ -40,10 +40,22 @@ snippet item "Itemize" bA
 \end{itemize}
 endsnippet
 
-snippet eqn "equation" bA
-\begin{equation${0}}
-	$1
-\end{equation}
+snippet nn "equation" bA
+\begin{equation*}
+	$0
+\end{equation*}
+endsnippet
+
+snippet na "equation" bA
+\begin{align*}
+	$0
+\end{align*}
+endsnippet
+
+snippet ng "equation" bA
+\begin{gather*}
+	$0
+\end{gather*}
 endsnippet
 
 snippet diag "Tikz Diagram" b
@@ -69,4 +81,11 @@ endsnippet
 
 snippet tke "Make equation environment" iA
 \$$1\$$0
+endsnippet
+
+snippet ans "boxed answer" bA
+\begin{center}
+	\boxed{$1}
+\end{center}
+$0
 endsnippet

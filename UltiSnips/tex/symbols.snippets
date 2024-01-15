@@ -21,11 +21,66 @@ snippet lda "lambda" iA
 endsnippet
 
 context "math()"
-snippet rho "rho" iA
-\rho  
+snippet "(\s|[^\\])rho" "rho" riA
+`!p snip.rv=match.group(1)`\rho 
 endsnippet
 
 context "math()"
 snippet sga "sigma" iA
-\sigma  
+\sigma 
+endsnippet
+
+context "math()"
+snippet "(\s|[^\\])mu" "mu" riA
+`!p snip.rv=match.group(1)`\mu 
+endsnippet
+
+context "math()"
+snippet "(\s|[^\\])theta" "theta" riA
+`!p snip.rv=match.group(1)`\theta 
+endsnippet
+
+context "math()"
+snippet ot "theta" i
+\cdot 
+endsnippet
+
+snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
+\hat{$1} = < $2 \hat{i} $3 \hat{j}>
+endsnippet 
+
+priority 10
+context "math()"
+snippet "hat" "hat" riA
+\hat{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])hat" "hat" riA
+\hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "vec" "vec" riA
+\vec{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])vec" "vec" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "bar" "bar" riA
+\bar{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])bar" "bar" riA
+\bar{`!p snip.rv=match.group(1)`}
 endsnippet
