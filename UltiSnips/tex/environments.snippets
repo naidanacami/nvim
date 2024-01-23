@@ -40,19 +40,26 @@ snippet item "Itemize" bA
 \end{itemize}
 endsnippet
 
-snippet nn "equation" bA
+snippet nn "new equation" bA
 \begin{equation*}
 	$0
 \end{equation*}
 endsnippet
 
-snippet na "equation" bA
+snippet nc "new citable equatoin" bA
+\begin{equation}\label{eq:$1}
+	$2
+\end{equation}
+$0
+endsnippet
+
+snippet na "new align" bA
 \begin{align*}
 	$0
 \end{align*}
 endsnippet
 
-snippet ng "equation" bA
+snippet ng "new gather" bA
 \begin{gather*}
 	$0
 \end{gather*}
@@ -84,8 +91,36 @@ snippet tke "Make equation environment" iA
 endsnippet
 
 snippet ans "boxed answer" bA
-\begin{center}
+\begin{equation*}
 	\boxed{$1}
-\end{center}
+\end{equation*}
 $0
+endsnippet
+
+priority 10
+snippet qs "question" bA
+\qs{$1}{
+	$0
+}
+endsnippet
+
+priority 100
+snippet \\qs "question" bA
+\qs{$1}{
+	$0
+}
+endsnippet
+
+priority 10
+snippet pf "proof" bA
+\pf{${1:Solution}}{
+	$0
+}
+endsnippet
+
+priority 100
+snippet \\pf "proof" bA
+\pf{${1:Solution}}{
+	$0
+}
 endsnippet

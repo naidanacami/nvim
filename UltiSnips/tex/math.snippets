@@ -63,8 +63,8 @@ snippet diff "d/dx" wA
 endsnippet
 
 context "math()"
-snippet sq "\sqrt{}" iA
-\sqrt{${1:${VISUAL}}} $0
+snippet "(\s|[^\\])sq" "square root" rwA
+`!p snip.rv=match.group(1)`\sqrt{${1:${VISUAL}}} $0
 endsnippet
 
 context "math()"
@@ -78,7 +78,7 @@ snippet ite "Itemize" bA
 endsnippet
 
 context "math()"
-snippet abs "degrees" iA
+snippet "(\s|[^\\])abs" "degrees" riA
 |$1|$0
 endsnippet
 
@@ -88,26 +88,28 @@ snippet "(\s|[^\\])int" "integral" rwA
 endsnippet
 
 context "math()"
-snippet umb "integral" wA
+snippet umb "underbrace" wA
 \underbrace{${1:a}}_{${2:b}} 
 endsnippet
 
 context "math()"
-snippet fx "integral" wA
-(x)
+snippet eval "evaluate" wA
+\bigg\rvert_{$1}^{$2}$0
 endsnippet
 
 context "math()"
-snippet "(\s|[^\\])cos" "cos" rwA
-`!p snip.rv=match.group(1)`\cos{}
+snippet fu "function" iA
+(${1:x})$0
 endsnippet
 
+priority 100
 context "math()"
-snippet "(\s|[^\\])sin" "sin" rwA
-`!p snip.rv=match.group(1)`\sin{}
+snippet rsi "round siunit" wA
+\SI[round-precision=$1, round-mode=${2:figures}]{$3}{$4}$0
 endsnippet
 
+priority 10
 context "math()"
-snippet "(\s|[^\\])tan" "tan" rwA
-`!p snip.rv=match.group(1)`\tan{}
+snippet "(\s|[^\\])si" "siunit" rwA
+\SI{$1}{$2}$0
 endsnippet

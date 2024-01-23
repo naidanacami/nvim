@@ -45,20 +45,41 @@ snippet ot "theta" i
 \cdot 
 endsnippet
 
+priority 100
+context "math()"
+snippet "1(,\.|\.,)" "Vector postfix" riA
+\vec{$1} = \left< $2 \widehat{$3} \right> $0
+endsnippet 
+
+priority 100
+context "math()"
+snippet "2(,\.|\.,)" "Vector postfix" riA
+\vec{$1} = \left< $2 \widehat{${3:i}} $4 \widehat{${5:j}} \right> $0
+endsnippet 
+
+priority 100
+context "math()"
+snippet "3(,\.|\.,)" "Vector postfix" riA
+\vec{$1} = \left< $2 \widehat{i} $3 \widehat{j} $4 \widehat{k} \right> $0
+endsnippet 
+
+
+priority 10
+context "math()"
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
-\hat{$1} = < $2 \hat{i} $3 \hat{j}>
+\vec{`!p snip.rv=match.group(1)`$1}$0
 endsnippet 
 
 priority 10
 context "math()"
 snippet "hat" "hat" riA
-\hat{$1}$0
+\widehat{$1}$0
 endsnippet
 
 priority 100
 context "math()"
 snippet "([a-zA-Z])hat" "hat" riA
-\hat{`!p snip.rv=match.group(1)`}
+\widehat{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 10
@@ -83,4 +104,24 @@ priority 100
 context "math()"
 snippet "([a-zA-Z])bar" "bar" riA
 \bar{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+snippet "(\s|[^\\])ln" "ln" riA
+`!p snip.rv=match.group(1)`\ln 
+endsnippet
+
+context "math()"
+snippet "(\s|[^\\])pi" "pi" riA
+`!p snip.rv=match.group(1)`\pi 
+endsnippet
+
+context "math()"
+snippet aph "alpha" iA
+\alpha 
+endsnippet
+
+context "math()"
+snippet oma "omega" iA
+\omega 
 endsnippet
