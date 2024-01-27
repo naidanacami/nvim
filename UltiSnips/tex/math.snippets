@@ -68,8 +68,8 @@ snippet "(\s|[^\\])sq" "square root" rwA
 endsnippet
 
 context "math()"
-snippet ee "d/dx" iA
-\cdot 10^{$1}$2
+snippet "([0-9]|\s)ee" "d/dx" riA
+`!p snip.rv=match.group(1)`\cdot 10^{$1}$
 endsnippet
 
 context "env("itemize")"
@@ -78,8 +78,8 @@ snippet ite "Itemize" bA
 endsnippet
 
 context "math()"
-snippet "(\s|[^\\])abs" "degrees" riA
-|$1|$0
+snippet "(\s|[^\\])abs" "absolute" riA
+`!p snip.rv=match.group(1)`|$1|$0
 endsnippet
 
 context "math()"
@@ -110,6 +110,6 @@ endsnippet
 
 priority 10
 context "math()"
-snippet "(\s|[^\\])si" "siunit" rwA
-\SI{$1}{$2}$0
+snippet "(\s|[0-9])si" "siunit" rwA
+`!p snip.rv=match.group(1)`\SI{$1}{$2}$0
 endsnippet

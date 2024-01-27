@@ -11,8 +11,8 @@ def env(name):
 endglobal
 
 context "math()"
-snippet deg "degrees" iA
-^{\circ}
+snippet "(\s|[^\\])deg" "degrees" riA
+`!p snip.rv=match.group(1)`^{\circ}
 endsnippet
 
 context "math()"
