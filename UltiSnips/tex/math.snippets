@@ -113,3 +113,9 @@ context "math()"
 snippet "(\s|[0-9])si" "siunit" rwA
 `!p snip.rv=match.group(1)`\SI{$1}{$2}$0
 endsnippet
+
+priority 1
+context "math()"
+snippet si "siunit" i
+\SI{$1}{$2}$0
+endsnippet
