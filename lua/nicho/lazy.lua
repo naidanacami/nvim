@@ -65,4 +65,10 @@ require("lazy").setup({
 		'SirVer/ultisnips',
 		event = { 'InsertEnter' }
 	},
+	{
+		'vim-airline/vim-airline',
+	},
+	{
+		'vim-airline/vim-airline-themes',
+	},
 })
