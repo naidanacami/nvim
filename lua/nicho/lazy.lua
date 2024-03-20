@@ -13,6 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
+		'nvim-tree/nvim-web-devicons',
+	},
+	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.3',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
@@ -43,24 +46,6 @@ require("lazy").setup({
     {
         'navarasu/onedark.nvim'
 	},
-    -- {
-	-- 	'nvim-treesitter/nvim-treesitter',
-	-- 	build = ":TSUpdate",
-	-- 	event = { "BufReadPost", "BufNewFile" },
-	-- 	dependencies = {
-	-- 		{
-	-- 			"nvim-treesitter/nvim-treesitter-textobjects",
-	-- 			init = function()
-	-- 				-- disable rtp plugin, as we only need its queries for mini.ai
-	-- 				-- In case other textobject modules are enabled, we will load them
-	-- 				-- once nvim-treesitter is loaded
-	-- 				require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
-	-- 				load_textobjects = true
-	-- 			end,
-	-- 		},
-	-- 	},
-	-- 	cmd = { "TSUpdateSync" },
-	-- },
 	{
 		'SirVer/ultisnips',
 		event = { 'InsertEnter' }
@@ -71,4 +56,56 @@ require("lazy").setup({
 	{
 		'vim-airline/vim-airline-themes',
 	},
+	{
+		'equalsraf/neovim-gui-shim'
+	},
+	{
+		'nvimdev/dashboard-nvim',
+		event = 'VimEnter',
+		config = function()
+		require('dashboard').setup {
+			theme = 'hyper',
+			config = {
+			week_header = {
+			enable = true,
+			},
+			shortcut = {
+				{ desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+				{
+					icon = ' ',
+					icon_hl = '@variable',
+					desc = 'Files',
+					group = 'Label',
+					action = 'Telescope find_files',
+					key = 'f',
+				},
+				{
+					desc = ' Apps',
+					group = 'DiagnosticHint',
+					action = 'Telescope app',
+					key = 'a',
+				},
+				{
+					desc = ' dotfiles',
+					group = 'Number',
+					action = 'Telescope dotfiles',
+					key = 'd',
+				},
+			},
+			},
+		}
+		end,
+		dependencies = { {'nvim-tree/nvim-web-devicons'}}
+	},
+	{
+		'nvim-tree/nvim-tree.lua',
+	},
+	{
+		'nanozuki/tabby.nvim',
+		event = 'VimEnter',
+		dependencies = 'nvim-tree/nvim-web-devicons',
+		config = function() 	
+			-- configs...
+		end,
+	}
 })
