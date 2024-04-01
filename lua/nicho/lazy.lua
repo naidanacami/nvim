@@ -107,5 +107,11 @@ require("lazy").setup({
 		config = function() 	
 			-- configs...
 		end,
-	}
+	},
+	{
+		'machakann/vim-sandwich',
+	},
+	{
+		'terryma/vim-smooth-scroll',
+	},
 })
