@@ -4,4 +4,6 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 set spell
 set clipboard=unnamedplus
 let g:airline_theme='bubblegum'
-    
+
+" for ctrl backspase
+imap <C-BS> <C-W>
